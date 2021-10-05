@@ -16,7 +16,7 @@ exports.signUp = async (request, response) => {
         await user.signUp()
 
         if(user.errors.length > 0) {
-            request.flash('errors', users.errors)
+            request.flash('errors', user.errors)
             request.session.save(function () {
                 return response.redirect(process.env.url+'/login')
             })

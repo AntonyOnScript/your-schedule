@@ -4,13 +4,16 @@
 
 <div class="row">
 
+    <%- include('./includes/messages.ejs') %>
+
     <div class="col">
         <h3>Login</h3>
 
         <form action="/login" method="post">
 
-            <input type="text" placeholder="Your Email">
-            <input type="text" placeholder="Your Pass">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="text" placeholder="Your Email" name="email">
+            <input type="text" placeholder="Your Pass" name="password">
 
             <button type="submit">Log In</button>
 
@@ -22,8 +25,9 @@
 
         <form action="/sign-up" method="post">
 
-            <input type="text" placeholder="Your Email">
-            <input type="text" placeholder="Your Pass">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="text" placeholder="Your Email" name="email">
+            <input type="text" placeholder="Your Pass" name="password">
 
             <button type="submit">Register</button>
 

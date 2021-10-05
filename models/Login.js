@@ -34,11 +34,13 @@ class Login {
     checkBody() {
 
         for(let i in this.body) {
-            if(this.body[i] !== 'string') {
-               this.errors.push('Please fill the fields correctly')
+            if(typeof this.body[i] !== 'string') {
+                this.errors.push('Please fill the fields correctly')
             }
         }
 
     }
 
 }
+
+module.exports = Login
