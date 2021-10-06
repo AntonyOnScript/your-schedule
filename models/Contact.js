@@ -42,6 +42,13 @@ class Contact {
 
     }
 
+    static async loadAllContacts() {
+
+        const contacts = await contactModel.find()
+        return contacts
+
+    }
+
 }
 
 module.exports = Contact
