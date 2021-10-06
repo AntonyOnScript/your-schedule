@@ -13,5 +13,6 @@ router.get('/', Contact.index)
 router.get('/contact', Contact.index)
 router.post('/contact', Contact.register)
 router.get('/contact/:id', Contact.loadContactById)
+router.post('/contact/update/:id', Contact.editContactById)
 
 module.exports = router

@@ -37,3 +37,15 @@ exports.loadContactById = async (request, response) => {
     }
 
 }
+
+exports.editContactById = async (request, response) => {
+
+    const contact = new Contact(request.body)
+    await contact.contactEdit(request.params.id)
+
+    request.flash('success', 'Contact was edited')
+    request.session.save(function () {
+        return response.redirect(process.env.url+'/contact/'+contact.contact._id)
+    })
+
+}
