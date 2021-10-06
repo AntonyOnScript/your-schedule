@@ -7,7 +7,7 @@ const Login = require('./controllers/Login')
 
 const { checkUser } = require('./middlewares/global')
 
-router.get('/', Home.index)
+router.get('/', checkUser, Home.index)
 
 router.get('/login', Login.index)
 router.post('/login', Login.login)
