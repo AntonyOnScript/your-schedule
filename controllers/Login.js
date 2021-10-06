@@ -57,3 +57,12 @@ exports.signUp = async (request, response) => {
     }
 
 }
+
+exports.logout = (request, response) => {
+
+    request.session.regenerate(() => {
+        request.flash('success', "You has left")
+        return response.redirect(process.env.url+'/login')
+    })
+
+}

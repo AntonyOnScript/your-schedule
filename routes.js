@@ -7,6 +7,7 @@ const Login = require('./controllers/Login')
 
 router.get('/', Home.index)
 router.get('/login', Login.index)
+router.get('/logout', Login.logout)
 router.post('/login', Login.login)
 router.post('/sign-up', Login.signUp)
 router.get('/', Contact.index)
