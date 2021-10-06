@@ -1,0 +1,22 @@
+<%- include('./includes/header.ejs') %>
+<%- include('./includes/navbar.ejs') %>
+
+<%- include('./includes/messages.ejs') %>
+
+<% if(!contact._id) { %>
+    <form action="/contact" method="post">
+<% } else { %>
+   <form action="/contact/update/<%= contact._id %>" method="post">
+<% } %>
+
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="text" name="name" id="" placeholder="name" value="<%= contact.name %>">
+    <input type="text" name="telephone" id="" placeholder="telephone">
+    <input type="text" name="email" id="" placeholder="email">
+    <textarea name="description" id="" cols="30" rows="10" placeholder="description"></textarea>
+
+    <button type="submit">Ok</button>
+
+</form>
+
+<%- include('./includes/footer.ejs') %>
