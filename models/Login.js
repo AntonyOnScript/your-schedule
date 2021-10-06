@@ -16,6 +16,26 @@ class Login {
         this.login = null
     }
 
+    async logIn() {
+
+        this.checkBody()
+
+        if(this.errors.length > 0) return
+
+        this.login = await loginModel.findOne({ email: this.body.email })
+
+        if(!this.login) {
+            this.errors.push('Email not found')
+            return
+        }
+
+        if(!bcrypt.compareSync(this.body.password, this.login.password)) {
+            this.errors.push('Incorrect password')
+            return
+        }
+
+    }
+
     async signUp() {
 
         this.checkBody()
