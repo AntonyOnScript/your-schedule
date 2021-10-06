@@ -30,11 +30,21 @@ exports.loadContactById = async (request, response) => {
 
     const contact = await Contact.loadById(request.params.id)
 
-    if(contact) {
-        return response.render('contact', {
-            contact: contact
-        })
+    if(contact.userId === request.session.user._id) {
+
+        if(contact) {
+            return response.render('contact', {
+                contact: contact
+            })
+        }
+
+        return
     }
+
+    request.flash('errors', 'You must be logged')
+    request.session.save(() => {
+        return response.redirect(process.env.url+'/login')
+    })
 
 }
 
