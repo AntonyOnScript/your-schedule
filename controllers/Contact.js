@@ -59,3 +59,14 @@ exports.editContactById = async (request, response) => {
     })
 
 }
+
+exports.deleteContact = async (request, response) => {
+
+    const contact = await Contact.contactDelete(request.params.id)
+
+    request.flash('success', 'Contact was deleted')
+    request.session.save(function () {
+        return response.redirect(process.env.url+'/contact')
+    })
+
+}

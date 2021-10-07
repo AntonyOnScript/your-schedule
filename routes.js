@@ -20,5 +20,6 @@ router.post('/contact', checkUser, Contact.register)
 
 router.get('/contact/:id', checkUser,Contact.loadContactById)
 router.post('/contact/update/:id', checkUser,Contact.editContactById)
+router.get('/contact/delete/:id', checkUser, Contact.deleteContact)
 
 module.exports = router
