@@ -3,20 +3,41 @@
 
 <%- include('./includes/messages.ejs') %>
 
+<h1 class="text-center mt-5 mb-5">Contact</h1>
+
 <% if(!contact._id) { %>
-    <form action="/contact" method="post">
+    <form action="/contact" class="w-100" method="post">
 <% } else { %>
-   <form action="/contact/update/<%= contact._id %>" method="post">
+   <form action="/contact/update/<%= contact._id %>" class="w-100" method="post">
 <% } %>
+    <div class="d-flex flex-column gap-3 container">
 
-    <input type="hidden" name="userId" value="<%= user._id %>">
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-    <input type="text" name="name" id="" placeholder="name" value="<%= contact.name %>">
-    <input type="text" name="telephone" id="" placeholder="telephone">
-    <input type="text" name="email" id="" placeholder="email">
-    <textarea name="description" id="" cols="30" rows="10" placeholder="description"></textarea>
+        <input type="hidden" name="userId" value="<%= user._id %>">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
-    <button type="submit">Ok</button>
+        <div class="d-flex flex-column">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" placeholder="name" value="<%= contact.name %>">
+        </div>
+
+        <div class="d-flex flex-column">
+            <label for="telephone">Telephone: </label>
+            <input type="text" name="telephone" id="telephone" placeholder="telephone" value="<%= contact.telephone %>">
+        </div>
+
+        <div class="d-flex flex-column">
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="" placeholder="email" value="<%= contact.email %>">
+        </div>
+
+        <div class="d-flex flex-column">
+            <label for="description">Description: </label>
+            <textarea name="description" id="description" rows="3" placeholder="description"><%= contact.description %></textarea>
+        </div>
+
+        <button type="submit" class="text-center btn btn-success">Ok</button>
+
+    </div>
 
 </form>
 

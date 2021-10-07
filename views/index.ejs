@@ -10,6 +10,7 @@
         <th scope="col">Telephone</th>
         <th scope="col">Email</th>
         <th scope="col">Description</th>
+        <th scope="col">Methods</th>
     </tr>
     </thead>
     <tbody>
@@ -19,8 +20,10 @@
             <td><%= contact.telephone %></td>
             <td><%= contact.email %></td>
             <td><%= contact.description %></td>
-            <td><a href="/contact/delete/<%= contact._id %>">Delete</a></td>
-            <td><a href="/contact/<%= contact._id %>">Edit</a></td>
+            <td>
+                <a href="/contact/delete/<%= contact._id %>" class="btn btn-danger">Delete</a>
+                <a href="/contact/<%= contact._id %>" class="btn btn-danger">Edit</a>
+            </td>
         </tr>
     <% }) %>
     </tbody>
