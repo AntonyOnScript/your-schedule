@@ -1,0 +1,23 @@
+[33m3fd8ac1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Login page was improved
+[33m16a0008[m Success messages was fixed
+[33m249adc2[m Messages length was improved
+[33mc4a1c52[m Contact page was improved
+[33m6fbef46[m Added contact edit method in home
+[33md145eff[m Added delete contact method in home
+[33m3dfc1f9[m Session time got a gain - 10 minutes
+[33mda00e24[m Home now only loads your own Contacts
+[33ma3a9ded[m Now only can update yourself Contacts
+[33m5fb5a91[m Database now keeps user id for each contact that is saved
+[33m3a4804f[m Login requirement middleware was made!
+[33me5d5988[m Logout method has made
+[33md25b36b[m Login method was added
+[33m9b16acf[m Added load all contacts method in home
+[33m0411a59[m Contact edit method was prototyped
+[33mcc1f081[m Contact Registering was prototyped
+[33m53d739d[m Navbar was prototyped and index got a clean up
+[33m8ede463[m Register method was made
+[33me229b0a[m Register method was prototyped
+[33ma178301[m Routes archive was prototyped
+[33m29677cc[m Initial project structure was prototyped
+[33mdc9a3bf[m Initial server structure got prototyped
+[33m7d8bfde[m Initial libraries were installed
