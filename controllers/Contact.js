@@ -15,7 +15,7 @@ exports.register = async (request, response) => {
 
         request.flash('success', 'Contact was registred successfully')
         request.session.save(() => {
-            return response.redirect(process.env.url+'/contact/'+contact.contact._id)
+            return response.redirect(process.env.url+'/')
         })
 
     } catch(e) {
@@ -55,7 +55,7 @@ exports.editContactById = async (request, response) => {
 
     request.flash('success', 'Contact was edited')
     request.session.save(function () {
-        return response.redirect(process.env.url+'/contact/'+contact.contact._id)
+        return response.redirect(process.env.url+'/')
     })
 
 }
@@ -66,7 +66,7 @@ exports.deleteContact = async (request, response) => {
 
     request.flash('success', 'Contact was deleted')
     request.session.save(function () {
-        return response.redirect(process.env.url+'/contact')
+        return response.redirect(process.env.url+'/')
     })
 
 }

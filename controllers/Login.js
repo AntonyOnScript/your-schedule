@@ -23,7 +23,7 @@ exports.login = async (request, response) => {
         request.session.user = user.login
         request.flash('success', 'Loged Successfully')
         request.session.save(function () {
-            return response.redirect(process.env.url+'/login')
+            return response.redirect(process.env.url+'/')
         })
 
     } catch (e) {
